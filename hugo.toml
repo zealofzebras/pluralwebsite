@@ -1,0 +1,3 @@
+baseURL = 'https://zealofzebras.github.io/pluralwebsite/'
+locale = 'en-us'
+title = 'Plural Website'

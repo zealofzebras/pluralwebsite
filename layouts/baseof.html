@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="{{ site.Language.Locale }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
+    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+  </head>
+  <body>
+    <header><a href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a></header>
+    <main>
+      {{ block "main" . }}{{ end }}
+    </main>
+  </body>
+</html>
