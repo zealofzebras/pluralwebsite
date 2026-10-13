@@ -8,12 +8,11 @@ const source = readFileSync(new URL('../static/js/theme.js', import.meta.url), '
 function boot({ saved = null, dark = false, blocked = false } = {}) {
   const events = {};
   const mediaEvents = {};
-  const selectEvents = {};
   const root = { dataset: {} };
   const meta = { content: '' };
-  const control = { hidden: true };
+  const choices = ['system', 'light', 'dark'].map(value => ({ value, checked: false, events: {}, addEventListener(name, callback) { this.events[name] = callback; } }));
+  const control = { querySelectorAll: () => choices };
   const storage = new Map(saved === null ? [] : [['plural-theme', saved]]);
-  const select = { value: '', closest: () => control, addEventListener: (name, callback) => { selectEvents[name] = callback; } };
   const media = { matches: dark, addEventListener: (name, callback) => { mediaEvents[name] = callback; } };
   const checkStorage = () => { if (blocked) throw new Error('Storage is unavailable'); };
   runInNewContext(source, {
@@ -21,7 +20,7 @@ function boot({ saved = null, dark = false, blocked = false } = {}) {
     document: {
       documentElement: root,
       querySelector: () => meta,
-      getElementById: () => select,
+      getElementById: id => ({ 'theme-switch': control })[id],
       addEventListener: (name, callback) => { events[name] = callback; },
     },
     localStorage: {
@@ -32,8 +31,8 @@ function boot({ saved = null, dark = false, blocked = false } = {}) {
   });
   events.DOMContentLoaded();
   return {
-    root, meta, control, select, storage,
-    choose(value) { select.value = value; selectEvents.change(); },
+    root, meta, choices, storage, events,
+    choose(value) { choices.forEach(choice => { choice.checked = choice.value === value; }); choices.find(choice => choice.checked).events.change(); },
     system(darkMode) { media.matches = darkMode; mediaEvents.change(); },
   };
 }
@@ -41,8 +40,7 @@ function boot({ saved = null, dark = false, blocked = false } = {}) {
 test('System is the default and follows live system changes', () => {
   const site = boot({ dark: true });
   assert.equal(site.root.dataset.theme, 'system');
-  assert.equal(site.select.value, 'system');
-  assert.equal(site.control.hidden, false);
+  assert.equal(site.choices.find(choice => choice.checked).value, 'system');
   assert.equal(site.meta.content, '#141b18');
   site.system(false);
   assert.equal(site.meta.content, '#f4f7f5');
@@ -74,4 +72,8 @@ test('Unavailable storage does not prevent switching', () => {
 
 test('Invalid saved preferences fall back to System', () => {
   assert.equal(boot({ saved: 'invalid' }).root.dataset.theme, 'system');
+});
+
+test('Popup visibility needs no JavaScript event handlers', () => {
+  assert.deepEqual(Object.keys(boot().events), ['DOMContentLoaded']);
 });

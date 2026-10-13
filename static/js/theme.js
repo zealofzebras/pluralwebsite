@@ -16,16 +16,18 @@
   applyTheme();
   systemTheme.addEventListener("change", applyTheme);
   document.addEventListener("DOMContentLoaded", () => {
-    const select = document.getElementById("theme-select");
-    select.value = theme;
-    select.closest("label").hidden = false;
-    select.addEventListener("change", () => {
-      theme = select.value;
-      try {
-        if (theme === "system") localStorage.removeItem(storageKey);
-        else localStorage.setItem(storageKey, theme);
-      } catch {}
-      applyTheme();
+    const control = document.getElementById("theme-switch");
+    const choices = control.querySelectorAll('input[name="theme"]');
+    choices.forEach(choice => {
+      choice.checked = choice.value === theme;
+      choice.addEventListener("change", () => {
+        theme = choice.value;
+        try {
+          if (theme === "system") localStorage.removeItem(storageKey);
+          else localStorage.setItem(storageKey, theme);
+        } catch {}
+        applyTheme();
+      });
     });
   });
 })();

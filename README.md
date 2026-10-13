@@ -29,10 +29,13 @@ The consumer homepage lives in `layouts/home.html`. Support and privacy copy
 lives in `content/`. The theme uses ink, recording coral and muted mint, with
 locally hosted Space Grotesk (SIL Open Font License included in `static/fonts/`).
 Animation and the FAQ are native HTML and CSS only. Reduced-motion preferences
-disable animation and smooth scrolling. The appearance menu defaults to System
-and follows the device's light/dark setting live. A small local script remembers
+disable animation and smooth scrolling. The icon-only appearance menu defaults to System
+and follows the device's light/dark setting live. Its popup uses CSS hover and
+focus-within, including keyboard and touch access, and closes when hover and
+focus leave. A small local script remembers
 explicit Light or Dark choices in local storage; automatic theming still works
-without JavaScript. No external fonts or analytics are required. Product images
+without JavaScript; CSS also supports temporary theme choices when scripts are
+disabled. No external fonts or analytics are required. Product images
 are captures of the real Plural UI with simulated mics.
 
 `static/images/plural.svg` is the master logo. Three rounded recording tracks

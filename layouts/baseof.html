@@ -23,19 +23,28 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header wrap">
-      <a class="brand" href="{{ site.Home.RelPermalink }}" aria-label="Plural home"><img src="{{ "images/plural.svg" | relURL }}" width="36" height="36" alt="">Plural<span class="brand-dot">.</span></a>
+      <a class="brand" href="{{ site.Home.RelPermalink }}" aria-label="Plural home"><img src="{{ "images/plural.svg" | relURL }}" width="36" height="36" alt=""></a>
       <nav aria-label="Main navigation">
         <a class="nav-feature" href="{{ site.Home.RelPermalink }}#possibilities">Explore</a>
         <a href="{{ "support/" | relURL }}">Support</a>
+        <div class="theme-switch" id="theme-switch">
+          <button class="theme-trigger" id="theme-button" type="button" aria-label="Color theme" aria-controls="theme-popup" title="Color theme"></button>
+          <div class="theme-popup" id="theme-popup">
+            <fieldset><legend class="visually-hidden">Color theme</legend>
+              <label><span class="theme-option-icon system" aria-hidden="true"></span>System<input type="radio" name="theme" value="system" checked></label>
+              <label><span class="theme-option-icon light" aria-hidden="true"></span>Light<input type="radio" name="theme" value="light"></label>
+              <label><span class="theme-option-icon dark" aria-hidden="true"></span>Dark<input type="radio" name="theme" value="dark"></label>
+            </fieldset>
+          </div>
+        </div>
         <a class="button button-small" href="{{ site.Home.RelPermalink }}#download">Get Plural <span aria-hidden="true">&#8599;</span></a>
       </nav>
-      <label class="theme-switch" hidden><span class="visually-hidden">Color theme</span><select id="theme-select" aria-label="Color theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label>
     </header>
     <main id="main">
       {{ block "main" . }}{{ end }}
     </main>
     <footer class="site-footer wrap">
-      <div><a class="brand" href="{{ site.Home.RelPermalink }}"><img src="{{ "images/plural.svg" | relURL }}" width="28" height="28" alt="">Plural<span class="brand-dot">.</span></a><p>A little more room for every voice.</p></div>
+      <div><a class="brand" href="{{ site.Home.RelPermalink }}" aria-label="Plural home"><img src="{{ "images/plural.svg" | relURL }}" width="28" height="28" alt=""></a><p>A little more room for every voice.</p></div>
       <nav aria-label="Footer navigation"><a href="{{ "support/" | relURL }}">Support</a><a href="{{ "privacy/" | relURL }}">Privacy</a><a href="https://github.com/zealofzebras/plural">Open source <span aria-hidden="true">&#8599;</span></a></nav>
       <p class="disclaimer">Independent of Sabinetek. SmartMike is a trademark of its owner.<br>&copy; {{ now.Year }} Plural · getplural.net</p>
     </footer>
