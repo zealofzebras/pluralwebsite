@@ -1,0 +1,22 @@
+body {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background: #fff;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+a {
+  color: #005ea8;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
