@@ -1,3 +1,7 @@
-baseURL = 'https://zealofzebras.github.io/pluralwebsite/'
+baseURL = 'https://getplural.net/'
 locale = 'en-us'
-title = 'Plural Website'
+title = 'Plural'
+
+[params]
+description = 'Record every voice. Plural records several microphones on separate tracks, with audio, video and recordings from your other devices in one take.'
+releases = 'https://github.com/zealofzebras/plural/releases'

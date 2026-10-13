@@ -1,5 +1,4 @@
 +++
-title = 'Welcome to Plural Website'
+title = 'Plural'
+description = 'Every voice. One take. Record multiple microphones on separate tracks, add video, and bring your devices together with Plural.'
 +++
-
-This static website is built with [Hugo](https://gohugo.io/) and hosted on GitHub Pages.

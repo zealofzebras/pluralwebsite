@@ -1,11 +1,58 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  {{ with site.RegularPages }}
-    <ul>
-      {{ range . }}
-        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-      {{ end }}
-    </ul>
-  {{ end }}
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy wrap">
+      <p class="eyebrow"><span class="record-dot" aria-hidden="true"></span> MULTITRACK RECORDING. TOGETHER.</p>
+      <h1 id="hero-title">Plural<span>.</span></h1>
+      <p class="hero-headline">Every voice. <span>One take.</span></p>
+      <p class="hero-description">The conversation is better with everyone in it.<br class="desktop-break"> Record several mics at once, each on its own track.</p>
+      <div class="hero-actions"><a class="button" href="#download">Get Plural <span aria-hidden="true">&#8599;</span></a><a class="text-link" href="#possibilities">Find your setup <span aria-hidden="true">&#8595;</span></a></div>
+      <p class="platform-note">For Windows &amp; Android · Free &amp; open source</p>
+    </div>
+  </section>
+  <section aria-label="The Plural recorder">
+    <figure class="hero-product wrap">
+      <div class="product-caption"><span><span class="live-dot" aria-hidden="true"></span> FOUR MICS. ONE RECORD BUTTON.</span><span>Meet your new recording space</span></div>
+      <picture><source media="(max-width: 600px)" srcset="{{ "images/recorder-phone.png" | relURL }}"><img src="{{ "images/recorder.png" | relURL }}" width="1440" height="900" alt="Plural recorder with three SmartMike+ microphones and one USB microphone, each with its own level meter." fetchpriority="high"></picture>
+      <figcaption>Your mics, your levels, your take. All in one place.</figcaption>
+    </figure>
+  </section>
+
+  <section id="possibilities" class="possibilities section wrap" aria-labelledby="possibilities-title">
+    <div class="section-heading"><p class="eyebrow">LESS SETUP. MORE SAYING SOMETHING.</p><h2 id="possibilities-title">Good things happen<br>when everyone is heard.</h2><p>A first podcast. A great interview. A conversation you want to keep. Make room for every voice, without making recording complicated.</p></div>
+    <div class="use-cases">
+      <article><span class="index">01 / PODCASTS &amp; INTERVIEWS</span><h3>Keep the voices.<br>Separate the tracks.</h3><p>Give each guest a mic. Record everyone together, then work with each voice separately when it is time to edit.</p></article>
+      <article><span class="index">02 / VIDEO &amp; VLOGS</span><h3>The whole story.<br>Sound included.</h3><p>Record camera video alongside your microphones on Windows and Android. Keep each voice on its own audio track.</p></article>
+      <article><span class="index">03 / OUT IN THE WORLD</span><h3>Small setup.<br>Big conversations.</h3><p>Bring your phone and wireless mics to the interview, the rehearsal or the next idea. Pause when you need a moment. Pick up where you left off.</p></article>
+    </div>
+  </section>
+
+  <section class="together section" aria-labelledby="together-title">
+    <div class="wrap together-layout">
+      <div><p class="eyebrow">MORE MICS. MORE POSSIBILITIES.</p><h2 id="together-title">Use what<br>you already have.</h2><p>A USB mic at your desk. Your laptop's built-in mic. The SmartMike+ mics in your drawer. Plural brings them into the same recording.</p><a class="text-link" href="#questions">Will my setup work? <span aria-hidden="true">&#8599;</span></a></div>
+      <div class="setup-list"><div><span class="setup-number">01</span><div><h3>Give your SmartMike+ a second act.</h3><p>Connect several over Bluetooth, with levels, battery status and mic controls together in one view. No original app needed.</p></div></div><div><span class="setup-number">02</span><div><h3>Bring your everyday mics.</h3><p>Add built-in, USB or wired microphones. Windows can record several local inputs at once; phone input options depend on your device.</p></div></div><div><span class="setup-number">03</span><div><h3>Bring your other devices, too.</h3><p>Link Plural on phones and computers over Wi-Fi or Bluetooth. Start and stop them from one device, then collect their files into one take.</p></div></div></div>
+    </div>
+  </section>
+
+  <section class="section wrap finish" aria-labelledby="finish-title">
+    <div class="section-heading"><p class="eyebrow">FROM FIRST WORD TO FINAL TAKE.</p><h2 id="finish-title">Stay in the conversation.<br>Keep control of the recording.</h2></div>
+    <div class="finish-grid"><div><span class="feature-mark" aria-hidden="true">&#9679;</span><h3>One Record button.</h3><p>Start every connected mic together. Pause and resume the take without filling your files with the break.</p></div><div><span class="feature-mark mint" aria-hidden="true">&#8801;</span><h3>A level for every voice.</h3><p>See each mic's level at a glance. Adjust volume, mute a channel and listen live as you record.</p></div><div><span class="feature-mark blue" aria-hidden="true">&#8599;</span><h3>Your take. Ready to go.</h3><p>Find, rename and play back recordings in Takes. Share them as files, in formats including WAV, MP3 and MP4.</p></div></div>
+    <div class="format-line"><span>YOUR NEXT EDIT STARTS HERE</span><p>WAV <b>/</b> M4A <b>/</b> MP3 <b>/</b> MKA <b>/</b> MKV <b>/</b> MP4</p></div>
+  </section>
+
+  <section id="download" class="download section" aria-labelledby="download-title"><div class="wrap">
+    <p class="eyebrow">MAKE SOMETHING WORTH LISTENING TO.</p><h2 id="download-title">Your next take<br>starts with Plural<span>.</span></h2><p>Free, open source, and ready for your next conversation.</p>
+    <div class="download-options"><a class="button" href="{{ site.Params.releases }}">Get Plural for Windows <span aria-hidden="true">&#8599;</span></a><a class="button button-outline" href="{{ site.Params.releases }}">Get Plural for Android <span aria-hidden="true">&#8599;</span></a></div>
+    <p class="download-note">Windows 10 &amp; 11 · Android 8.0+<br>Downloads are available on GitHub Releases. Android installs from an APK.</p>
+    <p class="other-platforms">On a Mac? <a href="{{ site.Params.releases }}">Experimental builds are available</a>, but have not been tested on Mac hardware.<br>iPhone and iPad support is in development.</p>
+  </div></section>
+
+  <section id="questions" class="questions section wrap" aria-labelledby="questions-title"><div><p class="eyebrow">A FEW GOOD QUESTIONS.</p><h2 id="questions-title">Before you<br>press Record.</h2><a class="text-link" href="{{ "support/" | relURL }}">More help <span aria-hidden="true">&#8599;</span></a></div>
+    <div class="faq-list">
+      <details><summary>Do I need SmartMike+ microphones?</summary><p>No. Plural can use built-in, USB and wired microphones too. You can combine them with SmartMike+ mics or record without any SmartMike at all. Android may only allow one local input at a time; Bluetooth headset support depends on the device.</p></details>
+      <details><summary>Can I still use my SmartMike+ mics?</summary><p>Yes, on Windows and Android. Pair the mics in your device's Bluetooth settings, then connect them in Plural. Each mic gets its own track and controls. Plural is independent of Sabinetek.</p></details>
+      <details><summary>Can several phones record together?</summary><p>Yes. Open Plural on each device and connect them over Wi-Fi or paired Bluetooth. Approve the connection on the other device, then start and stop recording from one place. Files are collected after recording; Wi-Fi is best for larger video takes.</p></details>
+      <details><summary>Can I use the recordings in my editor?</summary><p>Yes. Choose WAV, M4A or MP3 for a separate file per mic, or MKA, MKV or MP4 for a recording with multiple tracks. Support for multiple audio tracks varies by editor.</p></details>
+      <details><summary>Can I use my mics with OBS or calls?</summary><p>On Windows, Plural can send live mic audio through an installed virtual audio cable to other apps. A virtual cable is a separate installation. You do not need one to record in Plural.</p></details>
+    </div>
+  </section>
 {{ end }}

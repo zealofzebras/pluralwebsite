@@ -1,6 +1,6 @@
 # pluralwebsite
 
-A static Hugo website hosted at https://zealofzebras.github.io/pluralwebsite/.
+A static Hugo website for [getplural.net](https://getplural.net), hosted on GitHub Pages.
 The site uses local templates and CSS; no external theme is required.
 
 ## Local development
@@ -21,7 +21,31 @@ hugo new content about.md
 ```
 
 New pages are drafts by default. Set `draft = false` in their front matter to
-publish them; published pages are linked from the homepage.
+publish them and add a navigation link where appropriate.
+
+## Theme and identity
+
+The consumer homepage lives in `layouts/home.html`. Support and privacy copy
+lives in `content/`. The theme uses ink, recording coral and muted mint, with
+locally hosted Space Grotesk (SIL Open Font License included in `static/fonts/`).
+Interactions are native HTML and CSS only. Reduced-motion preferences disable
+animation and smooth scrolling. No JavaScript, external fonts or analytics are
+required. Product images are captures of the real Plural UI with simulated mics.
+
+`static/images/plural.svg` is the master logo. Three rounded recording tracks
+form an abstract P, with a coral third voice. SVG is used for the website mark
+and favicon; PNG and ICO exports support app icons and older browsers.
+
+To refresh the image exports on Windows, with the app repository checked out:
+
+```powershell
+./tools/export-assets.ps1 -AppRoot ../Sabinetek
+./tools/export-assets.ps1 -AppRoot ../Sabinetek -SyncApp
+```
+
+The second command also updates the app's marketing SVG/PNG, Android icon and
+desktop ICO. Store exports read `Marketing/brand/plural.svg` when regenerating
+icons. Keep both committed SVG copies together when changing the mark.
 
 ## Production build
 
@@ -41,3 +65,7 @@ branch has a different name, update the workflow's push branch filter.
 
 Deployment uses the base URL supplied by GitHub Pages so asset links work
 under the repository subpath or a configured custom domain.
+
+The intended production domain is `getplural.net`, declared in `hugo.toml` and
+`static/CNAME`. Configure that custom domain in GitHub Pages settings and point
+its DNS records to GitHub Pages; committing these files does not change DNS.

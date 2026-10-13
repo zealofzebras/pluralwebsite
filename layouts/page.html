@@ -1,4 +1,7 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
+  <article class="document wrap section">
+    <p class="eyebrow">PLURAL / {{ .Title | upper }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+  </article>
 {{ end }}
