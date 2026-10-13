@@ -28,9 +28,12 @@ publish them and add a navigation link where appropriate.
 The consumer homepage lives in `layouts/home.html`. Support and privacy copy
 lives in `content/`. The theme uses ink, recording coral and muted mint, with
 locally hosted Space Grotesk (SIL Open Font License included in `static/fonts/`).
-Interactions are native HTML and CSS only. Reduced-motion preferences disable
-animation and smooth scrolling. No JavaScript, external fonts or analytics are
-required. Product images are captures of the real Plural UI with simulated mics.
+Animation and the FAQ are native HTML and CSS only. Reduced-motion preferences
+disable animation and smooth scrolling. The appearance menu defaults to System
+and follows the device's light/dark setting live. A small local script remembers
+explicit Light or Dark choices in local storage; automatic theming still works
+without JavaScript. No external fonts or analytics are required. Product images
+are captures of the real Plural UI with simulated mics.
 
 `static/images/plural.svg` is the master logo. Three rounded recording tracks
 form an abstract P, with a coral third voice. SVG is used for the website mark
@@ -51,6 +54,12 @@ icons. Keep both committed SVG copies together when changing the mark.
 
 ```sh
 hugo --gc --minify --panicOnWarning
+```
+
+Run the appearance-switch regression tests with Node.js (no dependencies):
+
+```sh
+node --test tools/theme.test.mjs
 ```
 
 The generated site is written to `public/`, which is excluded from Git.

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f4f7f5">
+    <script src="{{ "js/theme.js" | relURL }}"></script>
     <title>{{ if .IsHome }}Plural | Every voice. One take.{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
     <meta name="description" content="{{ .Description | default site.Params.description }}">
     <link rel="canonical" href="{{ .Permalink }}">
@@ -28,6 +29,7 @@
         <a href="{{ "support/" | relURL }}">Support</a>
         <a class="button button-small" href="{{ site.Home.RelPermalink }}#download">Get Plural <span aria-hidden="true">&#8599;</span></a>
       </nav>
+      <label class="theme-switch" hidden><span class="visually-hidden">Color theme</span><select id="theme-select" aria-label="Color theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label>
     </header>
     <main id="main">
       {{ block "main" . }}{{ end }}

@@ -7,6 +7,8 @@ description = 'Privacy information for the Plural website and recording app.'
 
 The Plural website does not use analytics, tracking scripts or cookies. Fonts and images are served with the site rather than loaded from third-party services.
 
+If you choose a Light or Dark appearance, the website remembers that preference in your browser's local storage. Selecting System clears the saved choice and follows your device's appearance setting. This preference is not sent to a server.
+
 The website is hosted on GitHub Pages. The hosting provider receives information needed to serve web requests, such as your IP address. See [GitHub's privacy statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) for its practices.
 
 ## Your recordings
