@@ -13,9 +13,9 @@ url = '/support/'
 
 ## Choose your download
 
-On Android, [get Plural on Google Play](https://play.google.com/store/apps/details?id=net.getplural.app); it updates automatically.
+On Windows, [get Plural from Microsoft Store](https://apps.microsoft.com/detail/9NMT60QCF2TG), or [open it in the Store app](ms-windows-store://pdp/?productid=9NMT60QCF2TG). For Windows downloads, [visit GitHub Releases](https://github.com/zealofzebras/plural/releases).
 
-For Windows, [get the latest release](https://github.com/zealofzebras/plural/releases) and choose the Windows package for your computer. The Android APK is there too if you prefer to install it yourself; Android may ask you to allow installation from the browser or file manager you used to open it.
+On Android, [get Plural on Google Play](https://play.google.com/store/apps/details?id=net.getplural.app); it updates automatically. The Android APK is also on [GitHub Releases](https://github.com/zealofzebras/plural/releases) if you prefer to install it yourself; Android may ask you to allow installation from the browser or file manager you used to open it.
 
 Windows 10 and 11 and Android 8.0 or newer are supported. Mac builds are experimental and have not been tested on Mac hardware. iPhone and iPad support is still in development.
 
