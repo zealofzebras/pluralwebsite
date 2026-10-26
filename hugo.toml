@@ -5,3 +5,4 @@ title = 'Plural'
 [params]
 description = 'Record every voice. Plural records several microphones on separate tracks, with audio, video and recordings from your other devices in one take.'
 releases = 'https://github.com/zealofzebras/plural/releases'
+googlePlay = 'https://play.google.com/store/apps/details?id=net.getplural.app'
